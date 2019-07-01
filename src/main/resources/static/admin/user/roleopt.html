@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="../../css/common/bootstrap.min.css?ver=1">
+    <link rel="stylesheet" type="text/css" href="../../css/global.css?ver=1">
+    <link rel="stylesheet" type="text/css" href="../../css/common/button.css?ver=1">
+    <link rel="stylesheet" type="text/css" href="../../layui/css/layui.css" >
+    <link rel="stylesheet" type="text/css" href="../../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/common/sumoselect.css"/>
+    <link rel="stylesheet" href="../../css/common/style.css"/>
+    <script type="text/javascript" src="../../js/common/jquery-3.1.1.js?ver=1"></script>
+    <script src="../../layui/layui.js" type="text/javascript"></script>
+    <script src="../../js/common/common.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../js/common/jquery.sumoselect.js"></script>
+    <script type='text/javascript' src='../../js/admin/user/roleopt.js'></script>
+    <title>角色管理</title>
+    <style>
+        .bar {
+            background: none;
+            text-align: center;
+            margin-top: 19px;
+            color: #ffffff;
+        }
+        .bar .input-location{
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            color: #ffffff;
+            border-radius: 4px;
+        }
+        .btn-add {
+            display: inline-block;
+            left: 16px;
+            top: 0;
+            background: #162b44;
+            border: 1px solid #1e4f6b;
+            color: #85EFFF;
+            height: 38px;
+            line-height: 38px;
+            padding: 0 18px;
+            font-size: 14px;
+            border-radius: 2px;
+        }
+        .btnme{
+            color: #85EFFF;
+        }
+        .layui-table-view{
+            margin-top: 10px;
+        }
+
+        .btnme:hover {
+            background: #162b44;
+            color: #85EFFF;
+        }
+        /*去掉弹窗标题颜色*/
+        .layui-layer-lan .layui-layer-title{
+            background: #16354F!important;
+            padding-top: 10px;
+            color: #85EFFF!important;
+        }
+        .layui-layer-ico {
+            background: url(../../images/img/sign_out2.png) no-repeat!important;
+        }
+
+        .layui-disabled, .layui-disabled:hover {
+            color: #2c5371 !important;
+        }
+    </style>
+</head>
+<body>
+
+<blockquote class="layui-elem-quote bar posit-re">
+    <span style="margin-left: 5px;color: #FFFFFF;"> 角色名: </span>
+    <input class="input-location" id="txtRoleName"  value=""/>
+    <button class="search btnme btn btn-link"  data-toggle="tooltip" data-placement="bottom" title="查询"><img src="../../images/img/search.png" aria-hidden="true"/></button>
+    <button class="btnme btn-add posit-ad" id="btnAdd" title="添加新角色" style="display: inline-block;float: right;"><i class="layui-icon">&#xe654;</i> 添加新角色</button>
+</blockquote>
+
+<div class="container" style="text-align: center">
+    <div class="row clearfix">
+        <div class="col-md-12" >
+            <div id="dtRole" lay-filter="dtRole" lay-data="{id: 'dtRole'}"></div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="DEPT_CODE" />
+<input type="hidden" id="AREA_CODE" />
+<input type="hidden" id="DEPT_NAME" />
+<input type="hidden" id="txtid" />
+</body>
+<script type="text/html" id="toolopt">
+    {{#  if(d.hasOwnProperty("ISVALID")==false || d.ISVALID == undefined || d.ISVALID == null|| d.ISVALID != 1){ }}
+        <button class="btnme" title="编辑" lay-event="edit"><i class="layui-icon">&#xe642;</i>编辑</button>
+        <button class="btnme layui-disabled" title="添加用户" ><i class="layui-icon">&#xe770;</i>添加用户</button>
+        <button class="btnme layui-disabled" title="添加功能" ><i class="layui-icon">&#xe60a;</i>添加功能</button>
+        <button class="btnme layui-disabled" title="数据权限" ><i class="layui-icon">&#xe614;</i>数据权限</button>
+    {{# } else{ }}
+        <button class="btnme" title="编辑" lay-event="edit"><i class="layui-icon">&#xe642;</i>编辑</button>
+        <button class="btnme" title="添加用户" lay-event="adduser"><i class="layui-icon">&#xe770;</i>添加用户</button>
+        <button class="btnme" title="添加功能" lay-event="addfunction"><i class="layui-icon">&#xe60a;</i>添加功能</button>
+        <button class="btnme" title="数据权限" lay-event="adddepartment"><i class="layui-icon">&#xe614;</i>数据权限</button>
+    {{#  }  }}
+
+
+</script>
+<script type="text/html" id="toolIsvalid">
+    {{#  if(d.hasOwnProperty("ISVALID")==false || d.ISVALID == undefined || d.ISVALID == null){ }}
+        <i class="layui-icon" style="color:gray">&#x1006;</i>
+    {{# } else  if(d.ISVALID ==1){ }}
+        <i class="layui-icon" style="color:orange">&#xe605;</i>
+    {{#  }  else { }}
+        <i class="layui-icon" style="color:gray">&#x1006;</i>
+    {{# } }}
+</script>
+</html>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appenders>
+        <File name="file" fileName="D:/complaintLogs/logs.log">
+            <PatternLayout pattern="%d{HH:mm:ss,SSS} %p %c (%L) - %m%n"/>
+        </File>
+    </appenders>
+
+    <loggers>
+
+        <root level="ERROR">
+            <appender-ref ref="file"/>
+        </root>
+        <logger name="com.cjw.common" level="DEBUG" />
+        <logger name="com.cjw.controller" level="DEBUG" />
+        <logger name="com.cjw.entity" level="DEBUG" />
+        <logger name="com.cjw.serviceImpl" level="DEBUG" />
+        <logger name="com.cjw.config" level="DEBUG" />
+
+    </loggers>
+
+</configuration>

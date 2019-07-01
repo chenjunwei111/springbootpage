@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页</title>
+      <link rel="shortcut icon" href="images/logo.png">
+    <style>
+        html,body{height: 100%;width: 100%;margin:0;padding:0;}
+        body{
+            background:url(images/login/lgbg.png)no-repeat;
+            width:100%;
+            height:100%;
+            background-size:100% 100%;
+            position:absolute;
+            filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/login/lgbg.png',sizingMethod='scale');
+            font-family: arial, "微软雅黑";
+        }
+
+        .border1{
+            border: 1px solid white;
+        }
+
+        .centerDiv {position:absolute; left:50%; top:50%; width:1300px; height:700px; margin-left:-650px; margin-top:-350px}
+
+        .rightDivParent{
+            background: url(images/login/leftTop.png) 9px 8px no-repeat,
+            url(images/login/rightBottom.png) 328px 263px no-repeat;
+            margin: auto;
+            margin-top: 50px;
+            width: 420px;
+            height: 360px;
+            padding-top: 8px;
+        }
+        .rightDiv{
+            background: linear-gradient(-45deg, transparent 35px, rgba(53,91,137,0.56) 0) right,
+            linear-gradient(136deg, transparent 35px, rgba(53,91,137,0.56) 0) left;
+            background-size: 50% 100%;
+            background-repeat: no-repeat;
+            width: 340px;
+            height: 308px;
+            margin: auto;
+            text-align: left;
+            padding-top: 42px;
+            padding-left: 60px;
+        }
+
+        .inputSty{
+            border: none;width: 100%;height: 100%;background-color: transparent; outline:none;color: #60bace;font-size: 16px;
+        }
+
+        input::-webkit-input-placeholder{
+            color:#60bace;
+        }
+
+        input[type=checkbox]  {
+            display: inline-block;
+            vertical-align: middle;
+            width: 13px;
+            height: 13px;
+            margin-left: 5px;
+            -webkit-appearance: none;
+            background-color: transparent;
+            border: 0;
+            outline: 0 !important;
+            line-height: 20px;
+            color: #d8d8d8;
+        }
+
+
+
+        input[type=checkbox]:after  {
+            content: "";
+            display:block;
+            width: 13px;
+            height: 13px;
+            text-align: center;
+            line-height: 13px;
+            font-size: 13px;
+            color: #fff;
+            border: 2px solid #ddd;
+            background-color: #fff;
+            box-sizing:border-box;
+        }
+        input[type=checkbox]:checked:after  {
+            border: 2px solid #ddd;
+            background-color: #207e92;
+        }
+        input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
+            background-color: rgb(32, 80, 127) !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="centerDiv ">
+
+    <div style="float: left;width:639px;height:498px; margin-top:100px;background: url(images/login/leftPig.png) no-repeat;background-size: 100% 100%" class="" ></div>
+
+    <div style="float: right;width: 600px;height: 500px;margin-top:100px;" class="">
+
+        <div class="" style="margin: auto;color: #ecfcfd;font-size: 26px;width: 456px;height: 70px;line-height: 80px;background: url(images/login/topTitle.png) no-repeat;background-size: 100% 100%;text-align: center">
+            <span>集中投诉管理平台</span>
+        </div>
+
+        <div class=" rightDivParent">
+        <div class=" rightDiv" >
+
+            <span style="color: #ecfcfd;font-size: 20px" >LOGIN</span>
+
+             <div style="border-radius: 4px;margin-top: 22px;width: 80%;height: 42px;line-height: 42px;background-color: #173a5c" class="">
+                  <div style="float: left;margin-top: 12px;margin-left: 10px;height: 14px;width: 12px;background: url(images/login/userName.png) no-repeat"></div>
+                  <div style="float: right;width: 90%;height: 38px">
+                      <input type="text" value="" style="display: none">
+                      <input type="text" value="" id="userName" class="inputSty" placeholder="请输入用户名" autocomplete="off">
+                  </div>
+             </div>
+
+            <div style="border-radius: 4px;margin-top: 24px;width: 80%;height: 42px;line-height: 42px;background-color: #173a5c" class="">
+                <div style="float: left;margin-top: 12px;margin-left: 10px;height: 14px;width: 12px;background: url(images/login/psw.png) no-repeat"></div>
+                <div style="float: right;width: 90%;height: 38px">
+                    <input type="password" value="" style="display: none">
+                    <input type="password"  id="passwd" class="inputSty" placeholder="请输入密码" autocomplete="off">
+                </div>
+            </div>
+            
+            <div style="color: #cdcdcd;font-size: 14px;margin-top: 15px">
+            <input type="checkbox" id="jizhu">
+            <span style="color:  #ecfcfd">记住密码</span>
+            </div>
+
+            <div  id="userLogin" style="border-radius: 4px;text-align: center;border: 1px solid #00ffff;background-color: rgba(3, 222, 225, 0.6);;
+            color: #FFFFFF;height: 42px;line-height:42px;width: 80%;margin-top: 20px" >登录</div>
+        </div>
+        </div>
+    </div>
+
+    <p style="clear: both;width: 100%;text-align: center;color: #FFFFFF;position: absolute;bottom: 25px;font-size: 16px;">推荐使用：谷歌浏览器；最佳分辨率：1920*1080</p>
+    <P style="clear: both;width: 100%;text-align: center;color: #FFFFFF;position: absolute;bottom: 0;font-size: 16px;">技术支持电话：+86-13619626832</P>
+</div>
+
+
+</body>
+<script type="text/javascript" src="js/common/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="js/common/common.js"></script>
+<script type="text/javascript" src="js/common/jquery.cookie.js"></script>
+
+<script>
+    $(function () {
+//        console.log($.cookie("rmbUser"))
+        if ($.cookie("rmbUser") == "true") {
+            $("#jizhu").attr("checked", true);
+            $("#userName").val($.cookie("userCode"));
+            $("#passwd").val($.cookie("userPasswd"));
+        }
+
+        $("#userName").change(function(){
+           $("#passwd").val("");
+        });
+
+        //按钮点击事件
+        $("#userLogin").click(function () {
+            login();
+        });
+
+        //键盘事件
+        $("html").keypress(function (event) {
+            if (event.keyCode == 13) {//判断是否enter键
+                login();
+            }
+        });
+
+//        $("#userLogin").mouseenter(function () {
+//            $("#userLogin").css("border","1px solid #104a82")
+//        })
+//
+//        $("#userLogin").mouseleave(function () {
+//            $("#userLogin").css("border","none")
+//        })
+
+    });
+
+    function login() {
+        Save();
+        var userCode = $("#userName").val();
+        var userPasswd = $("#passwd").val();
+        var flag = $("input[type='checkbox']").is(':checked');
+        $.ajax({
+            type: 'post',
+            data: {userName: userCode, passwd: userPasswd},
+            url: "/userperce/checkLogin.jhtml",
+            success: function (data) {
+                if (data == 'success') {
+                    window.location.href="/userperce/index.jhtml"
+                }else if(data == 'noaccount')  {
+                    ErroAlert("账号不存在")
+                }
+                else if(data == 'nopasswd')  {
+                    ErroAlert("密码错误")
+                }else if(data=='lock'){
+                    ErroAlert("账号已失效")
+                }
+            }
+        });
+    }
+
+
+    //记住用户名密码
+    function Save() {
+        if ($("input[type='checkbox']").is(':checked')) {
+            var str_username = $("#userName").val();
+            var str_password = $("#passwd").val();
+            $.cookie("rmbUser", "true", { expires: 7 }); //存储一个带7天期限的cookie
+            $.cookie("userCode", str_username, { expires: 7 });
+            $.cookie("userPasswd", str_password, { expires: 7 });
+        }
+        else {
+            $.cookie("rmbUser", "false", { expire: -1 });
+            $.cookie("userCode", "", { expires: -1 });
+            $.cookie("userPasswd", "", { expires: -1 });
+        }
+    };
+
+
+
+    //弹出
+    function ErroAlert(e) {
+        var index = layer.alert(e, { icon: 5, time: 2000, offset: 't', closeBtn: 0, title: '错误信息', btn: [], anim: 2, shade: 0 });
+        layer.style(index, {
+            color: '#777'
+        });
+    }
+</script>
+
+</html>

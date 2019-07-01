@@ -1,0 +1,145 @@
+/**status bar**/
+.map-status {
+    background: rgb(22, 53, 79);
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    bottom: 0px;
+    color: white;
+    overflow: hidden;
+}
+
+.map-status span :not(.vertical-line)
+{
+    font-size: 14px;
+    padding-top:4px;
+    float: left;
+}
+.lon-lat-label
+{
+    width:180px;
+    text-align: center;
+}
+
+.zoom-label
+{
+    /*left:200px;*/
+    width:50px;
+    text-align: center;
+}
+
+.vertical-line
+{
+    float: left;
+    height:95.5%;
+    width:1px;
+    overflow:hidden;
+    border-left:1px  solid  #d2d2d2;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+/**map tool**/
+.map-tools {
+    position: absolute;
+    margin-left: 1%;
+    top: 2%;
+    /*-ms-text-size-adjust: none;*/
+    opacity: 0.92;
+    background: rgb(245,245,245);
+}
+.mtool-box {
+    float: left;
+    height: 25px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: block;
+    opacity: 0.9;
+    border: 1px solid rgb(244,244,244);
+    min-width: 25px;
+}
+.mtool-nav-img {
+    max-width: 23px;
+    max-height: 23px;
+    width: 23px;
+    height: 23px;
+    padding: 1px;
+}
+i {
+    text-align: left;
+    font-size: 16px;
+    padding: 1px;
+    float: right;
+}
+/*.sub-box-show {display: inline-flex}*/
+/*.sub-box-hide{display:none} 26*/
+.sub-item{
+    top: 26px;
+    position: absolute;
+    display: inline-flex;
+}
+
+/****end***/
+
+/*****cMenu****/
+.RCM-Main{
+    position: absolute;
+}
+.RCM-container{
+    border: 1px solid #ccc;
+    padding: 5px 0px;
+    display: block;
+    box-shadow: 0px 0px 2px #ccc;
+    font-size: 14px;
+    border-radius: 3px;
+    z-index: 10000;
+    background: #fff;
+    color: #000;
+}
+.RCM-container ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.RCM-container ul li{
+    /* width: 70px; */
+    height: 30px;
+    line-height: 30px;
+    /* text-align: center; */
+    padding:0px 18px 0px 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.RCM-container ul li:hover{
+    background-color: rgba(52, 58, 64, 1.0);
+    color: #fff;
+}
+
+.textcenter{
+    text-align: center;
+}
+
+.fa-align-right{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+.RCM-child{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+/***end*****/
+
+.BMap_cpyCtrl
+{
+    display:none;
+}
+.anchorBL{
+    display:none;
+}
